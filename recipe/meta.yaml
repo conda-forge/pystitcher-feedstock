@@ -1,5 +1,5 @@
 {% set name = "pystitcher" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.4" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pystitcher-{{ version }}.tar.gz
-  sha256: 3184ab0fe0d69be6141cc1f414ad38c3a201505bb2e1cc681f9170d19ef0e208
+  url: https://github.com/captn3m0/pystitcher/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: a1c3f4249175c522fc07779fd577f73d1c11a2056210b8bcfae66440f6adfc79
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - pystitcher = pystitcher.skeleton:run
@@ -28,6 +28,7 @@ requirements:
     - markdown >=3.3.4
     - pypdf3 >=1.0.4
     - python >={{ python_min }}
+    - validators >=0.34.0
 
 test:
   imports:
